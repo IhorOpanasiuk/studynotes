@@ -31,9 +31,7 @@ public class TimedHostedService : IHostedService, IDisposable
     public Task StopAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Timed Hosted Service is stopping.");
-
         _timer?.Change(Timeout.Infinite, 0);
-
         return Task.CompletedTask;
     }
 
