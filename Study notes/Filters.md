@@ -44,7 +44,8 @@ public class OnlymeAsyncFilter : Attribute, IAsyncActionFilter
   
     public Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)  
     {        Console.WriteLine($"ASYNC EXECUTING {context.HttpContext.Request.Path}");  
-        next();        Console.WriteLine($"ASYNC EXECUTEDDDDD {context.HttpContext.Request.Path} in {_stopwatch.ElapsedMilliseconds} ms");  
+        next();        
+        Console.WriteLine($"ASYNC EXECUTEDDDDD {context.HttpContext.Request.Path} in {_stopwatch.ElapsedMilliseconds} ms");  
         return Task.CompletedTask;  
     }  
 }

@@ -46,13 +46,12 @@ public class TimedHostedService : IHostedService, IDisposable
 
 Щоб налаштувати це, при додавання сервісів в DI контейнер потрібно налаштувати таке:
 ```
-builder.Service.Congigure<HostOptions>(x => {
+builder.Service.Configure<HostOptions>(x => {
 	x.ServicesStartConcurrently = [true/false],
 	x.ServicesStopConcurrently = [true/false]
 })
 ```
 ##### IHostedLifecycleService
-
 В .Net 8 з'явився іще додатковий інтерфейс, який розширяє звичайний IHostedService тим, що окрім `StartAsync` і `StopAsync` в ньому також додались методи `StartingAsync` і `StoppingAsync`, `StartedAsync` і `StoppedAsync`.  Вони виконуються у такому порядку: `StartingAsync` => `StartAsync` =>`StartedAsync` => `StoppingAsync` => `StopAsync` => `StoppedAsync`
 
 #### BackgroundService
