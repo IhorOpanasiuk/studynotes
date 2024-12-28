@@ -1,0 +1,7 @@
+- [x] scheduler юзати на весь сервіс
+- [ ] В дтошці notification замінити крон на дейттайм наступного спрацювання
+- [x] в ChildrenService поміняти ITgBotService на INotificationService
+- [x] дописати Async в назви асинхронних методів
+- [ ] додати логування
+- [ ] Глянути брокери повідомлень різні
+- [ ] Глянути SQS, Hangfire

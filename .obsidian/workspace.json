@@ -11,13 +11,46 @@
             "id": "0417f6fcde75b5f7",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "studynotes/Study notes/Stack, heap, GC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Stack, heap, GC"
+            }
+          },
+          {
+            "id": "5d0e64590117f0a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "1b49a43df86d7942",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tasks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tasks"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -36,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -151,11 +184,34 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "0417f6fcde75b5f7",
+  "active": "1b49a43df86d7942",
   "lastOpenFiles": [
+    "studynotes/Study notes/Stored procedures.md",
+    "studynotes/Photos/Pasted image 20241217231022.png",
+    "studynotes/Study notes/Design patterns.md",
+    "Excalidraw/Drawing 2024-12-27 10.06.28.excalidraw.md",
+    "Excalidraw/Drawing 2024-12-27 10.07.19.excalidraw.md",
+    "Excalidraw/Drawing 2024-12-27 10.06.27.excalidraw.md",
+    "Excalidraw/Drawing 2024-12-27 10.05.28.excalidraw.md",
+    "Tasks.md",
+    "Excalidraw",
+    "studynotes/Study notes/Stack, heap, GC.md",
+    "studynotes/Study notes/Testing.md",
+    "studynotes/Study notes/Транзакції.md",
+    "studynotes/Study notes/Backgorund service and hosted service.md",
+    "studynotes/Study notes/EF loading.md",
+    "studynotes/Study notes/CLR.md",
+    "studynotes/Study notes/Async, Multithreading and concurrency.md",
+    "studynotes/Study notes/Filters.md",
+    "studynotes/Study notes/Attributes.md",
+    "studynotes/Study notes/Індекси.md",
+    "studynotes/Study notes/SQL.md",
+    "studynotes/Study notes/Не кластеризований індекс.md",
+    "studynotes/Теми.md",
     "studynotes/Study notes/testNote.md"
   ]
 }
