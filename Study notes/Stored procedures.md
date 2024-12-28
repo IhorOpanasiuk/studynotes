@@ -56,5 +56,4 @@ BEGIN ATOMIC
 SELECT id, name  FROM Users;
 END;
 ```
-
 Виклик функції: `SELECT * FROM GetAllUsers2();`
