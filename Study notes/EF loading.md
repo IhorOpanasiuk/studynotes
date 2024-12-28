@@ -26,6 +26,7 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 ```
 var blog = context.Blogs.Find(1);
 context.Entry(blog).Collection(b => b.Posts).Load();
+context.Entry(blog).Reference(b => b.Author).Load();
 ```
 
 #### Порівняння
