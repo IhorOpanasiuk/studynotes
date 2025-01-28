@@ -14,7 +14,7 @@ Users
 - *SELECT* u.title  FROM Users u
 - *SELECT* *** FROM Users u Where u.isMaries = true  
 **DML** 
-*INSERT* INTO User (id, Name,isMAried , HiringDate, TechStack)
+*INSERT* INTO User (id, Name, isMaried , HiringDate, TechStack)
 VALUES (1,'name','true','20.04.2018','.net');
 
 *UPDATE* Users 
