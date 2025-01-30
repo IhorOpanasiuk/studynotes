@@ -1,5 +1,5 @@
 ### Create table
-```
+``` SQL
 CREATE TABLE USERS(
 	id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 	first_name VARCHAR(30),
