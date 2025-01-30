@@ -15,7 +15,7 @@ LOH (Large object heap) зберігає об'єкти, розмір яких п
 
 POH (Pinned object heap) (.Net 5 +) зберігає об'єкти, які були вручну закріплені, GC в ній **не** відбувається.
 Додавання об'єкта до POH:
-```
+``` C#
 var b = new HttpClient();  
 GCHandle.Alloc(b, GCHandleType.Pinned);
 ```

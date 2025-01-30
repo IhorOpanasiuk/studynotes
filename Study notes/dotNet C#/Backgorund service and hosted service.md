@@ -3,7 +3,7 @@ Background service - це сервіс, який виконується пост
 The `IHostedService` interface defines two methods:
 - **`StartAsync(CancellationToken cancellationToken)`**: Called when the application host starts.
 - **`StopAsync(CancellationToken cancellationToken)`**: Called when the application host is performing a graceful shutdown.
-```
+``` C#
 public class TimedHostedService : IHostedService, IDisposable
 {
     private readonly ILogger<TimedHostedService> _logger;
@@ -45,7 +45,7 @@ public class TimedHostedService : IHostedService, IDisposable
 Важливою особливістю також є те, що незважаючи на те, що StartAsync і StopAsync методи є асинхронними ([[Async, Multithreading and concurrency]]), програма всеодно буде очікувати їх завершення для продовження роботи. 
 
 Щоб налаштувати це, при додавання сервісів в DI контейнер потрібно налаштувати таке:
-```
+``` C#
 builder.Service.Configure<HostOptions>(x => {
 	x.ServicesStartConcurrently = [true/false],
 	x.ServicesStopConcurrently = [true/false]
@@ -56,7 +56,7 @@ builder.Service.Configure<HostOptions>(x => {
 
 #### BackgroundService
 
-```
+``` C#
 public class TimedBackgroundService : BackgroundService
 {
     private readonly ILogger<TimedBackgroundService> _logger;
@@ -96,7 +96,7 @@ public class TimedBackgroundService : BackgroundService
 Quartz.NET - це потужний планувальник задач з відкритим кодом, який може бути альтернативою до базових background services коли потрібна більш складна логіка планування.
 
 Приклад налаштування і виконання джоби:
-```
+``` C#
 /// SimpleJob.cs
 public class SimpleJob : IJob
 {
