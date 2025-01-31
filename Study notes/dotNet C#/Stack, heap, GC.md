@@ -6,6 +6,16 @@ Stack - область пам'яті проекту, що працює за пр
 4. інформацію про виконання методів
 
 Heap - область пам'яті, в якій зберігаються референс тайпи, розмір не обмежений.
+
+###### All the heaps
+In general, there is 1 for the garbage collected heap. But in more details, the three generational heap plus the Large Object Heap are logically distinct heaps. = 4 
+Another one that you can't entirely ignore in managed code is the heap that stores static variables. It is associated with the AppDomain. Commonly named "loader heap" in .NET literature. It actually consists of 3 heaps (high frequency, low frequency and stub heap). = 4 + 3 = 7 
+Further are the heaps used by native code.There's a default process heap, Windows allocates from it, so does Marshal.AllocHGlobal(). And there's a separate heap where COM stores data, Marshal.AllocCoTaskMem() allocates from it.
+
+###### Where static members located in heap? 
+Another one that you can't entirely ignore in managed code is the heap that stores static variables. It is associated with the AppDomain. Commonly named "loader heap" in .NET literature.
+
+###### All the heaps explained detailed
 SOH (Small object heap) має 3 генерації:
 - Generation 0: нові об'єкти
 - Generation 1: об'єкти, що пережили одне прибирання сміття
@@ -49,6 +59,8 @@ String Literal Heap:
 Це відмінно від звичайного зберігання рядків у Managed Heap.
 
 
+###### App Domain
+При запуску додатку, написаного на C#, ОС створює процес, а середовище CLR створює всередині цього пресу логічний контейнер, який назвається доменом додатку (AppDomain), всередині якого працює запущений додаток. Кожен із AppDOmain буде обслуговувати свій виконуваний файл .NET. Для керування доменом платформа .NET надає клас AppDomain. 
 ## Garbage collection
 
 #### Алгоритм роботи
@@ -73,7 +85,8 @@ String Literal Heap:
     - **Звільняється пам'ять:** Пам'ять, яку займали мертві об'єкти, звільняється.
     - **Компактизація (рідко)(дефрагментація):** За замовчуванням LOH не компактизується часто, щоб уникнути значних витрат часу. Компактизація може бути викликана вручну або за певних умов, наприклад, при серйозному браку пам'яті.
 7. **Виділення додаткової пам'яті (якщо необхідно):** Якщо після всіх цих кроків все ще немає достатньо місця для розміщення об'єкта, .NET runtime звертається до операційної системи з запитом на виділення додаткової пам'яті для процесу.
-
+### Freachable and FInalize queues
+Finalization queue is where every object that needs finalization lands initially. This is determined based on whether he has a Finalize method. When GC finds a garbage object that is on Finalizable queue, it removes object reference from Finalizable queue and puts it on a Freachable queue. There is a specialized CLR thread that is only responsible for monitoring the Freachable queue and when GC adds new items there, he kicks in, takes objects one by one and calls it’s Finalize method.
 ### Граф доступності - Це граф обєктів який визначає чи доступний об'єкт за корінями графа 
 корінями графа в цьому випадку є :
 локальні змінні та аргументи методів всіх активних потоків на момент запуску GC
